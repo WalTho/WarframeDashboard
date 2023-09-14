@@ -29,6 +29,10 @@ body {
   margin: 0 10%;
 }
 
+:root {
+  max-width: 2440px;
+}
+
 a {
   color: #1E90FF;
   text-decoration: none;
