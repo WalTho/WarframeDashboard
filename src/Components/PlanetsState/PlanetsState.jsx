@@ -24,6 +24,9 @@ const PlanetsState = () => {
             "warm": "🔥",
             "joy": "😀",
             "anger": "😡",
+            "envy": "😒",
+            "sorrow": "😢",
+            "fear": "😱",
         };
 
         return emotes[state] || "🔍";
@@ -41,22 +44,26 @@ const PlanetsState = () => {
             "warm": "Chaud",
             "joy": "Joie",
             "anger": "Colère",
+            "envy": "Jalousie",
+            "sorrow": "Tristesse",
+            "fear": "Peur",
         };
 
         return translations[state] || state;
     };
 
     const planetStateItems = (data, title) => (
-        <div key={uuidv4()}>
-            <h2>{title}</h2>
-            <p>{renderState(data.state)} - {translateState(data.state)}</p>
-            {data.timeLeft && <p>Temps restant: {data.timeLeft}</p>}
-            <hr />
+        <div key={uuidv4()} className="planetStates-content">
+            <div className="planetStates-content-div">
+                <h2>{title}</h2>
+                <p>{renderState(data.state)} - {translateState(data.state)}</p>
+                {data.timeLeft && <p>Temps restant: {data.timeLeft}</p>}
+            </div>
         </div>
     );
 
     return (
-        <div>
+        <div className="planetStates">
             {planetEndpoints.map(planet => (
                 <WarframeDataDisplay
                     key={planet.endpoint}

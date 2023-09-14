@@ -1,5 +1,6 @@
 import React from "react";
 import { convertToDuration, getTimeRemaining } from "./../utils.js";
+import Accordion from "../Accordion/Accordion";
 
 export const ChallengeItem = ({ challenge }) => {
     let startedString = '';
@@ -20,20 +21,18 @@ export const ChallengeItem = ({ challenge }) => {
     }
 
     return (
-        <div key={challenge.id}>
-            <h4>{challenge.title}</h4>
+        <Accordion key={challenge.id} title={challenge.title}>
             <p>{challenge.desc}</p>
             <p>Réputation: {challenge.reputation}</p>
             {startedString && <p>{startedString}</p>}
             {expiresString && <p>{expiresString}</p>}
-            <hr />
-        </div>
+        </Accordion>
     );
 };
 
 export const ChallengeList = ({ challenges, title }) => (
-    <div>
-        <h3>{title}</h3>
+    <div >
+        <h2>{title}</h2>
         {challenges.map(challenge => <ChallengeItem key={challenge.id} challenge={challenge} />)}
     </div>
 );

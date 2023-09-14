@@ -30,7 +30,7 @@ const VoidTraderComponent = ({ data }) => {
     }
 
     return (
-        <div>
+        <div className="voidTrader">
             <h2>{data.character}</h2>
             <p>Localisation: {data.location}</p>
             <p>{timeString}</p>

@@ -1,16 +1,16 @@
 import React from "react";
 import { v4 as uuidv4 } from 'uuid';
 import WarframeDataDisplay from "../WarframeDataDisplay";
+import Accordion from "../Accordion/Accordion";
 
 const SyndicateMissions = () => {
 
     const SyndicateMissionsItems = (data) => (
         <div key={uuidv4()}>
             {data
-                .filter(syndicateMissions => syndicateMissions.jobs && syndicateMissions.jobs.length > 0)
+                .filter(syndicateMissions => syndicateMissions.jobs && syndicateMissions.jobs.length > 0) 
                 .map((syndicateMissions) => (
-                    <div className="syndicatMissions" key={uuidv4()}>
-                        <h2>{syndicateMissions.syndicate}</h2>
+                    <Accordion key={uuidv4()} title={syndicateMissions.syndicate}>
                         <p>À démarré il y a: {syndicateMissions.startString}</p>
                         <p>Expire le: {new Date(syndicateMissions.expiry).toLocaleString()}</p>
                         <p>Temps restant : {syndicateMissions.eta}</p>
@@ -24,13 +24,13 @@ const SyndicateMissions = () => {
                                 </li>
                             ))}
                         </ul>
-                    </div>
+                    </Accordion>
             ))}
         </div>
     );
 
     return (
-        <div>
+        <div className="syndicatMissions">
             <h1>Missions de Syndicats</h1>
             <WarframeDataDisplay endpoint="pc/syndicateMissions" render={SyndicateMissionsItems} key={uuidv4()}/>
         </div>

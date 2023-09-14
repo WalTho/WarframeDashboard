@@ -5,7 +5,7 @@ import { ChallengeList } from "./NightwaveComponent.jsx";
 const NightwaveDisplay = () => {
     const nightwaveDataDisplay = (data) => (
         <div>
-            <h2>Saison des Ondes Nocturnes {data.season}</h2>
+            <h1>Saison des Ondes Nocturnes {data.season}</h1>
             <ChallengeList title="Challenges Journaliers" challenges={data.activeChallenges.filter(challenge => challenge.isDaily)} />
             <ChallengeList title="Challenges Hebdomadaires" challenges={data.activeChallenges.filter(challenge => !challenge.isDaily && !challenge.isElite)} />
             <ChallengeList title="Challenges Hebdomadaires - Elite" challenges={data.activeChallenges.filter(challenge => challenge.isElite)} />
@@ -13,10 +13,12 @@ const NightwaveDisplay = () => {
     );
 
     return (
-        <WarframeDataDisplay
-            endpoint="pc/nightwave"
-            render={nightwaveDataDisplay}
-        />
+        <div className="nightwaves">
+            <WarframeDataDisplay
+                endpoint="pc/nightwave"
+                render={nightwaveDataDisplay}
+            />
+        </div>
     );
 }
 

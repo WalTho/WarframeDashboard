@@ -19,7 +19,7 @@ function WarframeDataDisplay({ endpoint, language = "fr", render }) {
         return <div>Loading...</div>;
     }
 
-    return <div key={endpoint}>{render(data)}</div>;
+    return <div key={endpoint} className="WarframeDataDisplay">{render(data)}</div>;
 }
 
 export default WarframeDataDisplay;
