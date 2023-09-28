@@ -1,10 +1,14 @@
 {
   "files": {
-    "main.js": "/WarframeDashboard/static/js/main.b6e65dee.js",
+    "main.css": "/WarframeDashboard/static/css/main.1f6d76f5.css",
+    "main.js": "/WarframeDashboard/static/js/main.28c12669.js",
+    "static/media/Empyrean.jpg": "/WarframeDashboard/static/media/Empyrean.f5d529f0a7c189cc5f24.jpg",
     "index.html": "/WarframeDashboard/index.html",
-    "main.b6e65dee.js.map": "/WarframeDashboard/static/js/main.b6e65dee.js.map"
+    "main.1f6d76f5.css.map": "/WarframeDashboard/static/css/main.1f6d76f5.css.map",
+    "main.28c12669.js.map": "/WarframeDashboard/static/js/main.28c12669.js.map"
   },
   "entrypoints": [
-    "static/js/main.b6e65dee.js"
+    "static/css/main.1f6d76f5.css",
+    "static/js/main.28c12669.js"
   ]
 }
